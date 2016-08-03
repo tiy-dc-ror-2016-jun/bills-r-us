@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class InvoiceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def test_can_have_many_items
+    invoice = invoices(:huge)
+    item = items(:one)
+    assert_includes invoice.items, item
+  end
+
+  
 end

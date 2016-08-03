@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803132114) do
+ActiveRecord::Schema.define(version: 20160803133009) do
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "total_in_cents"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20160803132114) do
     t.text     "comments"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.float    "quantity"
+    t.integer  "unit_price_in_cents"
+    t.integer  "total_in_cents"
+    t.integer  "invoice_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end

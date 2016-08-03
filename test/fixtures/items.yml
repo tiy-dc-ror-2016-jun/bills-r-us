@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Bucket
+  description: Shiny
+  quantity: 1
+  unit_price_in_cents: 1
+  total_in_cents: 1
+  invoice: huge
+
+two:
+  name: Bucket
+  description: Dull
+  quantity: 1.5
+  unit_price_in_cents: 1
+  total_in_cents: 1
+  invoice: huge

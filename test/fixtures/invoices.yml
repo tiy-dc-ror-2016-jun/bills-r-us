@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  total_in_cents: 1
-  total_tax_in_cents: 1
-  subtotal_in_cents: 1
-  tax_rate: 1.5
-  comments: MyText
+huge:
+  total_in_cents: 10000
+  total_tax_in_cents: 100
+  subtotal_in_cents: 9900
+  tax_rate: 1
+  comments: Huge Order
 
 two:
   total_in_cents: 1
