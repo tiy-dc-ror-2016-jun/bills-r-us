@@ -1,0 +1,11 @@
+<tr>
+  <td><%= item.name %></td>
+  <td><%= item.description %></td>
+  <td><%= item.quantity %></td>
+  <td><%=number_to_currency item.unit_price %></td>
+  <td><%=number_to_currency item.total_in_cents %></td>
+  <td>
+    <%= link_to "edit item", edit_invoice_item_path(id: item.id, invoice_id: @invoice.id) %>
+    <%= link_to "delete", invoice_item_path(id: item.id, invoice_id: @invoice.id), method: :delete %>
+  </td>
+</tr>

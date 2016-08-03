@@ -1,5 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# @items.each do |item| %>
+      <!-- <%# first way %> -->
+      <%# render partial: "item", locals: { item: item } %>
+
+      <!-- <%# second way %> -->
+      <%# render item %>
+    <%# end %>
+
+    <!-- <%# third way %> -->
+    <%= render @items %>
+  </tbody>
+</table>
+
+
 <p>
   <strong>Total in cents:</strong>
   <%= @invoice.total_in_cents %>
@@ -24,6 +47,6 @@
   <strong>Comments:</strong>
   <%= @invoice.comments %>
 </p>
-
+<%= link_to 'Add Item', new_invoice_item_path(@invoice.id) %> |
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>
