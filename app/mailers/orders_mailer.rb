@@ -7,8 +7,7 @@ class OrdersMailer < ApplicationMailer
   #
   def invoice(inv)
     @invoice = inv
-    @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: @invoice.email
   end
 end
