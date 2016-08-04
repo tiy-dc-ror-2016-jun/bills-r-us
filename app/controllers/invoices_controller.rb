@@ -62,6 +62,14 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def send_email
+    @invoice = Invoice.find(params[:id])
+
+    OrdersMailer.invoice.deliver_later
+
+    redirect_to invoice_path(id: @invoice.id), notice: 'We sent an email.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_invoice

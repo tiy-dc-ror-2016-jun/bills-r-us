@@ -1,0 +1,28 @@
+<h1>You gots a bill</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @invoice.items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.description %></td>
+        <td><%= item.quantity %></td>
+        <td><%=number_to_currency item.unit_price %></td>
+        <td><%=number_to_currency item.total_in_cents %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p> Sincerly </p>
+
+<p> Uncle Bob</p>
