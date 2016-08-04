@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :invoices do
+    member do
+      post :send_email
+    end
     resources :items, only: [:new, :create, :edit, :update, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
