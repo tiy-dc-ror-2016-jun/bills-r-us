@@ -6,9 +6,7 @@ class InvoicesController < ApplicationController
   def index
     @page = params[:page].to_i
     per_page = 10
-    current_offset = (@page - 1) * per_page
-    @num_of_pages = (Invoice.count / per_page.to_f).ceil
-    @invoices = Invoice.limit(per_page).offset(current_offset)
+    @invoices = Invoice.page(@page).per(per_page)
   end
 
   # GET /invoices/1
