@@ -32,5 +32,6 @@
 <div class="new-invoice-form-wrapper">
 
 </div>
-
-<%= link_to 'New Invoice', new_invoice_path, remote: true %>
+<% if current_user.sales? %>
+  <%= link_to 'New Invoice', new_invoice_path, remote: true %>
+<% end %>

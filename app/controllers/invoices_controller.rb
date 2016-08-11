@@ -1,5 +1,6 @@
 class InvoicesController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_sales, except: [:index,  :show]
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   # GET /invoices
@@ -79,6 +80,10 @@ class InvoicesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_invoice
       @invoice = Invoice.find(params[:id])
+    end
+
+    def authorize_sales
+      redirect_to invoices_path, notice: "Not Allowed, I'm Telling" unless current_user.sales?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

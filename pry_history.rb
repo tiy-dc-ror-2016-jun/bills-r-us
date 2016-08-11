@@ -138,3 +138,10 @@ Invoice.count / 10
 (11 / 10.0).ceil
 (11 / 10).ceil
 exit
+User.all.update_all(role: "sales")
+User.all.update_all(role: "")
+User.all.update_all(role: "sales")
+User.all.update_all(role: "")
+User.all.update_all(role: "member")
+User.all.update_all(role: "fufillment")
+exit
