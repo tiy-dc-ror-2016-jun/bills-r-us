@@ -4,7 +4,11 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.all
+    @page = params[:page].to_i
+    per_page = 10
+    current_offset = (@page - 1) * per_page
+    @num_of_pages = (Invoice.count / per_page.to_f).ceil
+    @invoices = Invoice.limit(per_page).offset(current_offset)
   end
 
   # GET /invoices/1
