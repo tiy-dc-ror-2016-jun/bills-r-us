@@ -1,0 +1,3 @@
+$(".new-invoice-form-wrapper").html("");
+$("table tbody").append("<%= j render @invoice %>");
+$("table tbody").children("tr").last().addClass("demo");

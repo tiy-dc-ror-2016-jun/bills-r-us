@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+
+ @-webkit-keyframes demo {
+     0% {
+         background-color: Yellow;
+         opacity:1;
+     }
+     22% {
+         background-color: Yellow;
+     }
+     77% {
+         background-color: Red;
+     }
+     100% {
+         background-color: #777;
+     }
+ }
+
+ .demo {
+     -webkit-animation-name: demo;
+     -webkit-animation-duration: 2900ms;
+     -webkit-animation-iteration-count: 1;
+     -webkit-animation-timing-function: ease-in-out;
+ }
