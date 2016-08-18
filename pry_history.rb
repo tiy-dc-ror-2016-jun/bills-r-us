@@ -145,3 +145,13 @@ User.all.update_all(role: "")
 User.all.update_all(role: "member")
 User.all.update_all(role: "fufillment")
 exit
+Invoice.all.each{|i| i.save}
+reload!
+Invoice.all.each{|i| i.save}
+Invoice.first.save
+reload!
+Invoice.first.save
+Invoice.all.each{|i| i.save}
+exit
+ENV
+exit

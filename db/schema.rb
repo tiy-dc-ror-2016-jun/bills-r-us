@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811153647) do
+ActiveRecord::Schema.define(version: 20160818154721) do
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "total_in_cents"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160811153647) do
     t.integer  "subtotal_in_cents"
     t.float    "tax_rate"
     t.text     "comments"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "amount_paid_in_cents"
   end
 
   create_table "items", force: :cascade do |t|

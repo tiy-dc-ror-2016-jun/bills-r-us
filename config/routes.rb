@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :invoices do
     resources :items, only: [:new, :create, :edit, :update, :destroy]
+    resources :charges, only: [:new, :create]
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

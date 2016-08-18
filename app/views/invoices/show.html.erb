@@ -48,5 +48,6 @@
   <%= @invoice.comments %>
 </p>
 <%= link_to 'Add Item', new_invoice_item_path(@invoice.id) %> |
+<%= link_to 'Take Payment', new_invoice_charge_path(@invoice.id) %> |
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>
